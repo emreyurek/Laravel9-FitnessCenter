@@ -4,7 +4,6 @@
 
 
 @section('content')
-
     <!-- Spinner Start -->
     <div id="spinner"
          class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -16,9 +15,44 @@
 
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-            <div class="col-md-6 text-center">
+        <div class="row vh-100 bg-white rounded align-items-start justify-content-center mx-0">
+            <div class="col-sm-12 col-xl-12">
                 <h3>Category List</h3>
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4">Category List</h6>
+                    <table class="table table-bordered ">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Keyword</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Status</th>
+                            <th style="width: 40px">Edit</th>
+                            <th style="width: 40px">Delete</th>
+                            <th style="width: 40px">Show</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data as $rs)
+                            <tr>
+                                <td>{{$rs->id}}</td>
+                                <td>{{$rs->title}}</td>
+                                <td>{{$rs->keywords}}</td>
+                                <td>{{$rs->description}}</td>
+                                <td>{{$rs->image}}</td>
+                                <td>{{$rs->status}}</td>
+                                <td><a href="/admin/category/edit{{$rs->id}}" class="btn btn-sm btn-info">Edit</a></td>
+                                <td><a href="/admin/category/delete{{$rs->id}}" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                                <td><a href="/admin/category/show{{$rs->id}}" class="btn btn-sm btn-success">Show</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
