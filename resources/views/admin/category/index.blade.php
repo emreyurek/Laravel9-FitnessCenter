@@ -17,7 +17,8 @@
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 bg-white rounded align-items-start justify-content-center mx-0">
             <div class="col-sm-12 col-xl-12">
-                <h3>Category List</h3>
+                <a href="/admin/category/create" class="btn btn-secondary bg-primary m-2 " style="width: 200px">Add
+                    Category</a>
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Category List</h6>
                     <table class="table table-bordered ">
@@ -43,8 +44,10 @@
                                 <td>{{$rs->description}}</td>
                                 <td>{{$rs->image}}</td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm btn-info">Edit</a></td>
-                                <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-sm btn-danger">Delete</a>
+                                <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm btn-primary">Edit</a>
+                                </td>
+                                <td><a href="/admin/category/delete/{{$rs->id}}"
+                                       class="btn btn-sm btn-danger">Delete</a>
                                 </td>
                                 <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-sm btn-success">Show</a>
                                 </td>

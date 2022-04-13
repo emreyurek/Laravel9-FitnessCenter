@@ -17,30 +17,51 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <div class="nav-item">
+                <a href="/admin" class="nav-link"><i class="nav-icon fas fa-home me-2"></i>Dashboard</a>
+            </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                        class="nav-icon fas fa-box-open me-2"></i>Orders</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">Buttons</a>
-                    <a href="typography.html" class="dropdown-item">Typography</a>
-                    <a href="element.html" class="dropdown-item">Other Elements</a>
+                    <a href="button.html" class="dropdown-item">
+                        <i class="far fa-circle nav-icon me-2"></i> New Orders</a>
+                    <a href="typography.html" class="dropdown-item">
+                        <i class="far fa-circle nav-icon me-2"></i> Accepted Orders</a>
+                    <a href="element.html" class="dropdown-item">
+                        <i class="far fa-circle nav-icon me-2"></i> Shipping Orders</a>
+                    <a href="element.html" class="dropdown-item">
+                        <i class="far fa-circle nav-icon me-2"></i> Completed Orders</a>
                 </div>
             </div>
-            <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-            <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-            <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i
-                        class="far fa-file-alt me-2"></i>Pages</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="signin.html" class="dropdown-item">Sign In</a>
-                    <a href="signup.html" class="dropdown-item">Sign Up</a>
-                    <a href="404.html" class="dropdown-item">404 Error</a>
-                    <a href="blank.html" class="dropdown-item active">Blank Page</a>
-                </div>
+            <div class="nav-item">
+                <a href="/admin/category" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Categories</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/product" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Products</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/comment" class="nav-link"><i class="nav-icon fas fa-comment me-2"></i>Comments</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/faq" class="nav-link"><i class="nav-icon fas fa-question me-2"></i>FAQ</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/messages" class="nav-link"><i class="nav-icon fas fa-mail-bulk me-2"></i>Messages</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/user" class="nav-link"><i class="nav-icon fas fa-user me-2"></i>Users</a>
+            </div>
+            <div class="nav-item">
+                <a href="/admin/social" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Social</a>
+                <br>
+            </div>
+            <div style=" color: grey ;"> &ensp;&ensp;&ensp;&ensp;LABELS</div>
+            <div class="nav-item">
+                <a href="/admin/setting" class="nav-link"><i class="nav-icon fas fa-tools me-2"></i>Settings</a>
             </div>
         </div>
     </nav>
 </div>
 <!-- Sidebar End -->
+
