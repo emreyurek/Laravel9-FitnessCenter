@@ -18,11 +18,11 @@
         </div>
         <div class="navbar-nav w-100">
             <div class="nav-item">
-                <a href="/admin" class="nav-link"><i class="nav-icon fas fa-home me-2"></i>Dashboard</a>
+                <a href="/admin" class="nav-link"><i class="nav-icon fas fa-home bg-warning me-2"></i>Dashboard</a>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="nav-icon fas fa-box-open me-2"></i>Orders</a>
+                        class="nav-icon fas fa-box-open bg-info me-2"></i>Orders</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="button.html" class="dropdown-item">
                         <i class="far fa-circle nav-icon me-2"></i> New Orders</a>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="nav-item">
-                <a href="/admin/category" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Categories</a>
+                <a href="/admin/category" class="nav-link"><i class="nav-icon fas fa-th bg-warning me-2"></i>Categories</a>
             </div>
             <div class="nav-item">
                 <a href="/admin/product" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Products</a>
@@ -50,13 +50,13 @@
                 <a href="/admin/messages" class="nav-link"><i class="nav-icon fas fa-mail-bulk me-2"></i>Messages</a>
             </div>
             <div class="nav-item">
-                <a href="/admin/user" class="nav-link"><i class="nav-icon fas fa-user me-2"></i>Users</a>
+                <a href="/admin/user" class="nav-link"><i class="nav-icon fas fa-user bg-success me-2"></i>Users</a>
             </div>
             <div class="nav-item">
                 <a href="/admin/social" class="nav-link"><i class="nav-icon fas fa-th me-2"></i>Social</a>
                 <br>
             </div>
-            <div style=" color: grey ;"> &ensp;&ensp;&ensp;&ensp;LABELS</div>
+            <div style="margin-left: 15%">LABELS</div>
             <div class="nav-item">
                 <a href="/admin/setting" class="nav-link"><i class="nav-icon fas fa-tools me-2"></i>Settings</a>
             </div>
