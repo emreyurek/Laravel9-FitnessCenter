@@ -22,7 +22,7 @@
                 <h3>Add Category</h3>
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Category Elements</h6>
-                    <form action="/admin/category/store" method="post">
+                    <form action="{{route('admin.category.store')}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>

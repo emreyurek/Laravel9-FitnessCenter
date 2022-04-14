@@ -21,9 +21,10 @@
         <div class="row vh-100 bg-white rounded align-items-sm-baseline mx-0">
             <div class="col-sm-12">
                 <div class="m-3">
-                    <a href="/admin/category/edit/{{$data->id}}" class="btn btn-secondary bg-primary"
+                    <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-secondary bg-primary"
                        style="width: 200px">Edit</a>
-                    <a href="/admin/category/destroy/{{$data->id}}" class="btn btn-secondary bg-danger"
+                    <a href=" " class="btn btn-secondary bg-danger"
+                       {{---delete.blade oluşturulduğunda dosya yolunu ver!--}}
                        style="width: 200px;margin-left: 14%"
                        onclick="return confirm('Deleting! Are you sure?')">Delete</a>
                 </div>

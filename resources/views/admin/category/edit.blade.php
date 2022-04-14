@@ -19,10 +19,10 @@
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 bg-white rounded align-items-start justify-content-center mx-0">
             <div class="col-sm-12 col-xl-12">
-                <h3>Edit Category:  {{$data->title}}</h3>
+                <h3>Edit Category: {{$data->title}}</h3>
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Category Elements</h6>
-                    <form action="/admin/category/update/{{$data->id}}" method="post">
+                    <form action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>
