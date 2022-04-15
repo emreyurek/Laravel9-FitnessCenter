@@ -22,8 +22,18 @@
                 <h3>Add Category</h3>
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Category Elements</h6>
-                    <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data" >
+                    <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <div class="mb-3">
+                            <label>Parent Category</label>
+                            <select class="form-select mb-3"  name="parent_id" style="">
+                                <option value="0" selected="selected">Main Category</option>
+                                @foreach($data as $rs)
+                                    <option
+                                        value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>
                             <input type="text" class="form-control" name="title" placeholder="Title">
