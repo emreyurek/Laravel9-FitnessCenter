@@ -22,7 +22,7 @@
                 <h3>Edit Category: {{$data->title}}</h3>
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Category Elements</h6>
-                    <form action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+                    <form action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Title</label>
