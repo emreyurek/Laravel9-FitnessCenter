@@ -30,6 +30,7 @@
                             <th>Price</th>
                             <th>Month</th>
                             <th>Image</th>
+                            <th>Image<br>Gallery</th>
                             <th>Status</th>
                             <th style="width: 40px">Edit</th>
                             <th style="width: 40px">Delete</th>
@@ -49,10 +50,15 @@
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
+                                <td><a href="{{route('admin.image.index',['pid'=>$rs->id])}}"
+                                       onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
+                                        <img src="{{asset('assets')}}/admin/img/gallery.png" style="height: 40px">
+                                    </a>
+                                </td>
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('admin.product.edit',['id'=>$rs->id])}}"
                                        class="btn btn-sm btn-primary">Edit</a></td>
-                                <td><a href="" {---delete.blade oluşturulduğunda dosya yolunu ver!--}}
+                                <td><a href="{{route('admin.product.destroy',['id'=>$rs->id])}}"
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
                                 <td><a href="{{route('admin.product.show',['id'=>$rs->id])}}"

@@ -14,8 +14,6 @@
     </div>
     <!-- Spinner End -->
 
-    {{--    rounded align-items-center justify-content-center--}}
-
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 bg-white rounded align-items-sm-baseline mx-0">
@@ -24,7 +22,6 @@
                     <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-secondary bg-primary"
                        style="width: 200px">Edit</a>
                     <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-secondary bg-danger"
-
                        style="width: 200px;margin-left: 14%"
                        onclick="return confirm('Deleting! Are you sure?')">Delete</a>
                 </div>
@@ -66,7 +63,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Blank End -->
 
 

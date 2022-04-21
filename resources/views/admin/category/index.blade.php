@@ -48,7 +48,7 @@
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"
                                        class="btn btn-sm btn-primary">Edit</a></td>
-                                <td><a href="" {---delete.blade oluşturulduğunda dosya yolunu ver!--}}
+                                <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
                                 <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"
