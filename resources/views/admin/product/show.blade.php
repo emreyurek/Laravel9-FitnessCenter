@@ -16,7 +16,7 @@
 
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 bg-white rounded align-items-sm-baseline mx-0">
+        <div class=" bg-white rounded align-items-sm-baseline mx-0">
             <div class="col-sm-12">
                 <div class="m-3">
                     <a href="{{route('admin.product.edit',['id'=>$data->id])}}" class="btn btn-secondary bg-primary"
@@ -29,9 +29,9 @@
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Detail Data</h6>
-                            <table class="table table-striped">
+                            <table class="table table-striped" style="margin-right: auto;margin-left: auto">
                                 <tr>
-                                    <th style="width: 200px">Id</th>
+                                    <th>Id</th>
                                     <td>{{$data->id}}</td>
                                 </tr>
                                 <tr>
@@ -62,7 +62,7 @@
                                 </tr>
                                 <tr>
                                     <th>Detail Information</th>
-                                    <td>{{$data->detail}}</td>
+                                    <td>{!! $data->detail !!}</td>
                                 </tr>
                                 <tr>
                                     <th>Image</th>
@@ -88,9 +88,6 @@
                 </div>
             </div>
         </div>
+
         <!-- Blank End -->
-
-
-
-
 @endsection

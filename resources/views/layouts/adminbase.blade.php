@@ -29,7 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('assets')}}/admin/css/style.css" rel="stylesheet">
-    @yield("head")
+    @yield('head')
 </head>
 <body>
 <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -39,7 +39,7 @@
 @include("admin.header")
 @yield('content')
 @include("admin.footer")
-@yield('footer')
+@yield('foot')
 
 </body>
 </html>
