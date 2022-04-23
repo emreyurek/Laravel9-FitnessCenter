@@ -1,32 +1,23 @@
 <!-- Hero Section Begin -->
 <section class="hero-section">
     <div class="hs-slider owl-carousel">
-        <div class="hs-item set-bg" data-setbg="{{asset('assets')}}/img/hero/hero-1.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-6">
-                        <div class="hi-text">
-                            <span>Shape your body</span>
-                            <h1>Be <strong>strong</strong> traning hard</h1>
-                            <a href="#" class="primary-btn">Get info</a>
+        @foreach($sliderdata as $rs)
+            <div class="hs-item set-bg"
+                 data-setbg="{{Storage::url($rs->image)}}"
+                 style="object-fit: cover;"> {{--Görsel boyutlandırmada sorun var--}}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-6">
+                            <div class="hi-text">
+                                <span>{{$rs->title}}</span>
+                                <h1>Be <strong>strong</strong> traning hard</h1>
+                                <a href="#" class="primary-btn">Get info</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hs-item set-bg" data-setbg="{{asset('assets')}}/img/hero/hero-2.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-6">
-                        <div class="hi-text">
-                            <span>Shape your body</span>
-                            <h1>Be <strong>strong</strong> traning hard</h1>
-                            <a href="#" class="primary-btn">Get info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 <!-- Hero Section End -->
