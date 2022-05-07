@@ -166,16 +166,16 @@
                 @foreach($productlist1 as $rs)
                     <div class="col-lg-4 col-md-8">
                         <div class="ps-item">
-                            <h3>{{$rs->months}} Month {{$rs->keywords}}</h3>
+                            <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>$ {{$rs->price}}</h2>
-                                <span>{{$rs->description}}</span>
+                                <span>{{$rs->keywords}}</span>
                             </div>
                             <ul>
-                                <li>{!! $rs->detail !!}</li>
+                                <li>{{$rs->description}}</li>
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                            <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn pricing-btn">Enroll
+                                now</a>
                         </div>
                     </div>
                 @endforeach

@@ -23,11 +23,13 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//*******Product*******
+Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
 
 //*******Admin Panel Routes*******
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
-//*******Admin Category Routes*******
+    //*******Admin Category Routes*******
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
