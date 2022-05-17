@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +14,10 @@ class HomeController extends Controller
     {
         $sliderdata = Product::limit(3)->get();
         $productlist1 = Product::limit(3)->get();
+        $setting = Setting::first();
+
         return view('home.index', [
+            'setting' => $setting,
             'sliderdata' => $sliderdata,
             'productlist1' => $productlist1
         ]);
