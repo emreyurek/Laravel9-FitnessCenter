@@ -23,6 +23,11 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//*******Home page Routes*******
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 //*******Product*******
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
 

@@ -22,7 +22,7 @@
           enctype="multipart/form-data">
         @csrf
         <div class="container-fluid pt-4 px-4">
-            <div class="row vh-100 bg-white rounded align-items-start justify-content-center mx-0">
+            <div class="row vh-101 bg-white rounded align-items-start justify-content-center mx-0">
                 <div class="col-sm-12 col-xl-12">
                     <div class="bg-light rounded h-auto p-4">
                         <nav>
@@ -182,8 +182,6 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
         </div>
     </form>
     <!-- Blank End -->
