@@ -47,7 +47,8 @@
                 <a href="/admin/faq" class="nav-link"><i class="nav-icon fas fa-question me-2"></i>FAQ</a>
             </div>
             <div class="nav-item">
-                <a href="/admin/messages" class="nav-link"><i class="nav-icon fas fa-mail-bulk me-2"></i>Messages</a>
+                <a href="{{route('admin.message.index')}}" class="nav-link"><i
+                        class="nav-icon fas fa-mail-bulk me-2"></i>Messages</a>
             </div>
             <div class="nav-item">
                 <a href="/admin/user" class="nav-link"><i class="nav-icon fas fa-user bg-success me-2"></i>Users</a>
@@ -64,4 +65,3 @@
     </nav>
 </div>
 <!-- Sidebar End -->
-

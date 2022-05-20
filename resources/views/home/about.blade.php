@@ -12,10 +12,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Contact Us</h2>
+                        <h2>About Us</h2>
                         <div class="bt-option">
                             <a href="{{route('home')}}">Home</a>
-                            <span>About us</span>
+                            <span>About</span>
                         </div>
                     </div>
                 </div>

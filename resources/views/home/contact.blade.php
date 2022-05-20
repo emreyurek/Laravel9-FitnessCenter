@@ -7,7 +7,8 @@
 
 @section('content')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg"   style="height: 450px;" data-setbg="{{asset('assets')}}/img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-section set-bg" style="height: 450px;"
+             data-setbg="{{asset('assets')}}/img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -42,12 +43,16 @@
                         <div class="section-title contact-title">
                             <span>Contact Form</span>
                         </div>
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
-                            <textarea placeholder="Comment"></textarea>
-                            <button type="submit">Submit</button>
+                        {{--                        <h3 style="color: white ; padding-bottom: 15px;">{{Session::get('info')}} </h3>--}}
+                        @include('home.messages')
+                        <form action="{{route("storemessage")}}" method="post">
+                            @csrf
+                            <input type="text" name="name" placeholder="Name & Surname">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="text" name="subject" placeholder="Subject">
+                            <textarea type="text" name="message" placeholder="Your Message"></textarea>
+                            <input type="submit" value="Send Message">
                         </form>
                     </div>
                 </div>
