@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
@@ -26,7 +27,6 @@ class HomeController extends Controller
 
     public function about()
     {
-
         $setting = Setting::first();
         return view('home.about', [
             'setting' => $setting,
@@ -44,11 +44,19 @@ class HomeController extends Controller
 
     public function contact()
     {
-
-
         $setting = Setting::first();
         return view('home.contact', [
             'setting' => $setting,
+        ]);
+    }
+
+    public function faq()
+    {
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq', [
+            'setting' => $setting,
+            'datalist' => $datalist
         ]);
     }
 
@@ -56,7 +64,7 @@ class HomeController extends Controller
     {
         //dd($request);
         $data = new Message();
-        $data->name= $request->input('name');
+        $data->name = $request->input('name');
         $data->email = $request->input('email');
         $data->phone = $request->input('phone');
         $data->subject = $request->input('subject');
@@ -64,7 +72,7 @@ class HomeController extends Controller
         $data->ip = request()->ip();
         $data->save();
 
-        return redirect()->route('contact')->with('info','Your Message has been sent, Thank you.');
+        return redirect()->route('contact')->with('info', 'Your Message has been sent, Thank you.');
     }
 
     public function product($id)
