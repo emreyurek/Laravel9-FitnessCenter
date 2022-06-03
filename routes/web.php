@@ -21,6 +21,10 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 |
 */
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 //*******Home page Routes*******
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
