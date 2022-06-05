@@ -80,14 +80,18 @@
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
-                    <div class="to-search search-switch">
-                        <i class="fa fa-search"></i>
-                    </div>
                     <div class="to-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <div class="canvas-menu mobile-menu">
+                            @auth
+                                <strong class="fa fa-user-o text-uppercase"
+                                        style="color: white"> {{Auth::user()->name }} |</strong>
+                                <a href="/logoutuser" class="text-uppercase">Logout</a>
+                            @endauth
+                            @guest
+                                <a href="/loginuser" class="text-uppercase">Login</a>
+                                <a href="/registeruser" class="text-uppercase">Join</a>
+                            @endguest
+                        </div>
                     </div>
                 </div>
             </div>

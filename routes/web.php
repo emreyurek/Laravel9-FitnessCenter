@@ -21,10 +21,6 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 //*******Home page Routes*******
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -34,6 +30,13 @@ Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('sto
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser',[HomeController::class, 'logout'])->name('logoutuser');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 //*******Product*******
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
