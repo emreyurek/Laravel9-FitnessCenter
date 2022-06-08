@@ -14,7 +14,7 @@
     </div>
     <nav class="canvas-menu mobile-menu">
         <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="./about-us.html">About Us</a></li>
             <li><a href="./classes.html">Classes</a></li>
             <li><a href="./services.html">Services</a></li>
@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="logo">
-                    <a href="./index.html">
+                    <a href="{{route('home')}}">
                         <img src="{{asset('assets')}}/img/logo.png" alt="">
                     </a>
                 </div>
@@ -85,6 +85,7 @@
                             @auth
                                 <strong class="fa fa-user-o text-uppercase"
                                         style="color: white"> {{Auth::user()->name }} |</strong>
+                                <a href="{{route('userpanel.index')}}" class="text-uppercase">My Account</a>
                                 <a href="/logoutuser" class="text-uppercase">Logout</a>
                             @endauth
                             @guest
