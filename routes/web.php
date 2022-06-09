@@ -48,9 +48,11 @@ Route::get('/product/{id}', [HomeController::class, 'product'])->name('product')
 //*******User Auth Control*******
 Route::middleware('auth')->group(function () {
 
-    //*******User Routes*******
+    //*******User Panel Routes*******
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/reviews', 'reviews')->name('reviews');
+        Route::get('/reviewsdestroy/{id}', 'reviewsdestroy')->name('reviewsdestroy');
     });
 
     //*******Admin Panel Routes*******
