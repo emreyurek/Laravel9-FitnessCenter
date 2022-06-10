@@ -32,6 +32,13 @@ Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('sto
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 
+Route::get('/order/{id}', [HomeController::class, 'order'])->name('order');
+Route::post('/storeorder/{id}', [HomeController::class, 'storeorder'])->name('storeorder');
+Route::get('/ordercomplete', [HomeController::class, 'ordercomplete'])->name('ordercomplete');
+
+
+
+
 Route::view('/loginuser', 'home.login')->name('loginuser');
 Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
@@ -53,6 +60,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewsdestroy/{id}', 'reviewsdestroy')->name('reviewsdestroy');
+        Route::get('/orders', 'orders')->name('orders');
+        Route::get('/orderdetail/{id}', 'orderdetail')->name('orderdetail');
+
     });
 
     //*******Admin Panel Routes*******

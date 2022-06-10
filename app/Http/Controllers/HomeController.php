@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Setting;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -89,14 +91,14 @@ class HomeController extends Controller
         $data->ip = request()->ip();
         $data->save();
 
-        return redirect()->route('product',['id'=>$request->input('product_id')])->with('success', 'Your comment has been sent, Thank you.');
+        return redirect()->route('product', ['id' => $request->input('product_id')])->with('success', 'Your comment has been sent, Thank you.');
     }
 
     public function product($id)
     {
         $data = Product::find($id);
         $images = DB::table('images')->where('product_id', $id)->get();
-        $reviews = Comment::where('product_id',$id)->where('status','True')->get();
+        $reviews = Comment::where('product_id', $id)->where('status', 'True')->get();
         return view('home.product', [
             'data' => $data,
             'images' => $images,
@@ -106,7 +108,7 @@ class HomeController extends Controller
 
     public function logout(Request $request)
     {
-     Auth::logout();
+        Auth::logout();
 
         $request->session()->invalidate();
 
@@ -117,7 +119,7 @@ class HomeController extends Controller
 
     public function loginadmincheck(Request $request)
     {
-       // dd($request);
+        // dd($request);
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -134,4 +136,43 @@ class HomeController extends Controller
         ])->onlyInput('email');
     }
 
+
+    public function order(Request $request, $id)
+    {
+        $data = Product::find($id);
+        return view("home.user.order",
+            [
+                'data' => $data
+            ]);
+    }
+
+    public function storeorder(Request $request, $id)
+    {
+        $cardcheck = 'True';
+
+        if ($cardcheck == 'True') {
+            $data = new Order();
+            $productdata = Product::find($id);
+            $data->name = $request->input('name');
+            $data->phone = $request->input('phone');
+            $data->email = $request->input('email');
+            $data->user_id = Auth::id();
+            $data->product_id = $productdata->id;
+            $data->months = $productdata->months;
+            $data->price = $productdata->price;
+            $data->IP = $_SERVER['REMOTE_ADDR'];
+            $data->StartDate = Carbon::now();
+            $data->FinishDate = Carbon::now()->addMonths($productdata->months);
+            $data->save();
+
+            return redirect()->route('ordercomplete')->with('success', 'Product Buying Successfuly');
+        } else
+            return redirect()->route('ordercomplete')->with('error', 'Your credit card is not valid');
+
+    }
+
+    public function ordercomplete(){
+
+        return  view('home.user.ordercomplete');
+    }
 }
