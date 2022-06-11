@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
@@ -15,6 +16,25 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+
+    public static function maincategorylist()
+    {
+
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+
+    public function categoryproducts($id){
+        $category = Category::find($id);
+        $products = DB::table('products')->where('category_id',$id)->get();
+        $parenCategories = Category::where('parent_id', '=', 0)->with('children')->get();
+        return view('home.categoryproducts', [
+         'category' => $category,
+         'products' => $products,
+         'parenCategories' => $parenCategories
+        ]);
+
+
+    }
 
     public function index()
     {
@@ -171,8 +191,9 @@ class HomeController extends Controller
 
     }
 
-    public function ordercomplete(){
+    public function ordercomplete()
+    {
 
-        return  view('home.user.ordercomplete');
+        return view('home.user.ordercomplete');
     }
 }

@@ -55,7 +55,21 @@
             color: #FFD700;
         }
     </style>
+
+    <!--category-->
+    <style type="text/css">
+        /* hide child elements */
+        #nav li ul {
+            display: none;
+        }
+        /* show child elements when hovering over list item */
+        #nav li:hover ul {
+            display: block;
+            float: right;
+        }
+    </style>
     <!-- Breadcrumb Section Begin -->
+
 
     <section class="breadcrumb-section set-bg" data-setbg="{{asset('assets')}}/img/breadcrumb-bg.jpg"
              style="height: 450px;">
@@ -63,9 +77,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Services</h2>
                         <div class="bt-option">
-                            <a>Home</a>
+                            <a href="{{route('home')}}">Home</a>
                             <a>Categories</a>
                             <span>{{$data->category->title}}</span>
                         </div>
@@ -76,32 +89,47 @@
     </section>
     <!-- Breadcrumb Section End -->
 
+    @php
+        $parenCategories = \App\Http\Controllers\HomeController::maincategorylist();
+    @endphp
+
     <!-- Services Section Begin -->
-    <section class="services-section spad" style="	padding-top: 80px; padding-bottom: 80px;">
+    <section class="services-section spad" style="padding-top: 80px; padding-bottom: 40px ">
         <div class="container">
             @include('home.messages')
-            {{--  <div class="row">
-                  <div class="col-lg-12">
-                      <div class="section-title">
-                          <span>What we do?</span>
-                          <h2>PUSH YOUR LIMITS FORWARD</h2>
-                      </div>
-                  </div>
-              </div>--}}
             <div class="row">
+                <div class="col-lg-3 row-cols-md-auto" style="margin-right: 12px;">
+                    <div class="sidebar-option">
+                        <div class="so-categories">
+                            <h5 class="title">Categories</h5>
+                            @foreach($parenCategories as $rs)
+                                <ul id="nav">
+                                    <li><a href="#">{{$rs->title}}</a>
+                                        <ul>
+                                            @if(count($rs->children))
+                                                @include('home.categorytree',['children' => $rs->children])
+                                            @endif
+                                        </ul>
+                                    </li>
+                                </ul>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-3 order-lg-1 col-md-6 p-0">
                     <div class="ss-pic">
                         <img src="{{Storage::url( $data->image)}}" style="width: 292px ; height: 292px">
                     </div>
                 </div>
-                <div class="col-lg-9 order-lg-2 col-md-6 p-0">
+                <div class="col-lg-5 order-lg-2 col-md-6 p-0">
                     <div class="ss-text ">
                         <p>{{ $data->description}}
                         </p>
                         <br>
                         <div class="row justify-content-center">
-                            <a href="{{route('order',['id'=> $data->id])}}" class="primary-btn pricing-btn"  {{--send product id --}}
-                               style="background-color: #f36100; color: white ; text-align: center;width: 225px">Buy
+                            <a href="{{route('order',['id'=> $data->id])}}" class="primary-btn pricing-btn"
+                               {{--send product id --}}
+                               style="background-color: #f36100; color: white ; text-align: center;width: 225px ">Buy
                                 now</a>
                         </div>
                     </div>

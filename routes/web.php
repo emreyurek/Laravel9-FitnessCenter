@@ -52,6 +52,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //*******Product*******
 Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
+Route::get('/categoryproducts/{id}/{slug}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
+
 
 //*******User Auth Control*******
 Route::middleware('auth')->group(function () {
