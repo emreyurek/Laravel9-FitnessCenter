@@ -52,11 +52,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price" value="{{$data->price}}">
+                        <input type="number" step="any" class="form-control" name="price" value="{{$data->price}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Month</label>
-                        <input type="number" class="form-control" name="months" value="{{$data->months}}">
+                        <input type="number" step="any" class="form-control" name="months" value="{{$data->months}}">
                     </div>
                     <div class="mb-3" style="background-color: white">
                         <label for="exampleInputEmail1" class="form-label">Detail Information</label>

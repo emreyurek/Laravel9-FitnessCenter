@@ -11,7 +11,7 @@
                             <div class="hi-text">
                                 <span>{{$rs->title}}</span>
                                 <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn">Get info</a>
                             </div>
                         </div>
                     </div>

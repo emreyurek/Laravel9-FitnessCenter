@@ -177,8 +177,7 @@
                             <ul>
                                 <li>{{$rs->description}}</li>
                             </ul>
-                            <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn pricing-btn">Enroll
-                                now</a>
+                            <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn pricing-btn">GET INFO</a>
                         </div>
                     </div>
                 @endforeach

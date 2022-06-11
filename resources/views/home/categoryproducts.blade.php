@@ -28,6 +28,7 @@
                         <h2>Products</h2>
                         <div class="bt-option">
                             <a href="{{route('home')}}">Home</a>
+                            <a>Category</a>
                             <span>{{$category->title}}</span>
                         </div>
                     </div>
@@ -52,8 +53,7 @@
                             <ul>
                                 <li>{{$rs->description}}</li>
                             </ul>
-                            <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn pricing-btn">Enroll
-                                now</a>
+                            <a href="{{route('product',['id'=> $rs->id])}}" class="primary-btn pricing-btn">GET INFO</a>
                         </div>
                     </div>
                 @endforeach

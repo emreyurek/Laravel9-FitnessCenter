@@ -47,11 +47,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Price</label>
-                            <input type="number" class="form-control" name="price" value="0">
+                            <input type="number" step="any" class="form-control" name="price" value="0">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Month</label>
-                            <input type="number" class="form-control" name="months" value="0">
+                            <input type="number" step="any" class="form-control" name="months" value="0">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Detail Information</label>

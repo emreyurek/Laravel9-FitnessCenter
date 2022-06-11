@@ -129,7 +129,7 @@
                         <div class="row justify-content-center">
                             <a href="{{route('order',['id'=> $data->id])}}" class="primary-btn pricing-btn"
                                {{--send product id --}}
-                               style="background-color: #f36100; color: white ; text-align: center;width: 225px ">Buy
+                               style="background-color: #f36100; color: white ; text-align: center;width: 225px">Buy
                                 now</a>
                         </div>
                     </div>
