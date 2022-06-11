@@ -55,15 +55,26 @@
                                 <th>Month</th>
                                 <th>StartDate</th>
                                 <th>FinishDate</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><img src="{{Storage::url( $orderproducts->image)}}" style="width: 70px;height: 70px">&#160;&#160;&#160;{{$orderproducts->title}}</td>
+                                <td><img src="{{Storage::url( $orderproducts->image)}}"
+                                         style="width: 70px;height: 70px">&#160;&#160;&#160;{{$orderproducts->title}}
+                                </td>
                                 <td>${{$order->price}}</td>
                                 <td>{{$order->months}}</td>
                                 <td>{{$order->StartDate}}</td>
                                 <td>{{$order->FinishDate}}</td>
+                                <td>{{$order->status}}
+                                    &#160;  &#160;
+                                    @if($order->status == 'New')
+                                        <a href="{{route('userpanel.cancelorder',['id'=>$order->id])}}"
+                                           class="btn btn-sm btn-danger"
+                                           onclick="return confirm('Cancelling! Are you sure?')">Cancel</a>
+                                    @endif
+                                </td>
                             </tr>
                             </tbody>
                         </table>

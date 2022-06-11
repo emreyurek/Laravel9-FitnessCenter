@@ -25,14 +25,12 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                         class="nav-icon fas fa-box-open bg-info me-2"></i>Orders</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">
+                    <a href="/admin/order/New" class="dropdown-item">
                         <i class="far fa-circle nav-icon me-2"></i> New Orders</a>
-                    <a href="typography.html" class="dropdown-item">
+                    <a href="/admin/order/Accepted" class="dropdown-item">
                         <i class="far fa-circle nav-icon me-2"></i> Accepted Orders</a>
-                    <a href="element.html" class="dropdown-item">
-                        <i class="far fa-circle nav-icon me-2"></i> Shipping Orders</a>
-                    <a href="element.html" class="dropdown-item">
-                        <i class="far fa-circle nav-icon me-2"></i> Completed Orders</a>
+                    <a href="/admin/order/Cancelled" class="dropdown-item">
+                        <i class="far fa-circle nav-icon me-2"></i> Cancelled Orders</a>
                 </div>
             </div>
             <div class="nav-item">
