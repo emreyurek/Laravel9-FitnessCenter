@@ -48,6 +48,7 @@
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>$ {{$rs->price}}</h2>
+                                <span>{{$rs->months}} Month</span>
                                 <span>{{$rs->keywords}}</span>
                             </div>
                             <ul>

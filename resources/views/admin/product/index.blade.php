@@ -15,7 +15,7 @@
 
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 bg-white rounded align-items-start justify-content-center mx-0">
+        <div class="row bg-white rounded align-items-start justify-content-center mx-0">
             <div class="col-sm-12 col-xl-12">
                 <a href="{{route('admin.product.create')}}" class="btn btn-secondary bg-primary m-3 "
                    style="width: 200px">Add Product</a>

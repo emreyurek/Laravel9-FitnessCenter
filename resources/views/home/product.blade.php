@@ -94,7 +94,7 @@
     @endphp
 
     <!-- Services Section Begin -->
-    <section class="services-section spad" style="padding-top: 80px; padding-bottom: 40px ">
+    <section class="services-section spad" style="padding-top: 80px; padding-bottom: 60px ">
         <div class="container">
             @include('home.messages')
             <div class="row">
@@ -123,7 +123,9 @@
                 </div>
                 <div class="col-lg-5 order-lg-2 col-md-6 p-0">
                     <div class="ss-text ">
-                        <p>{{ $data->description}}
+                        <h5 style="color: #f36100;"> {{$data->months}} Month {{$data->title}} Only ${{$data->price}}</h5>
+                        <p>
+                            {{ $data->description}}
                         </p>
                         <br>
                         <div class="row justify-content-center">
